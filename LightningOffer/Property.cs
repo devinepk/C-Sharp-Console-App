@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
 using RestSharp;
 using System.Configuration;
 using System.Collections.Specialized;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace LightningOffer
 {
@@ -38,7 +35,21 @@ namespace LightningOffer
 
             IRestResponse response = client.Execute(request);
 
+
+            //the actual json response
             string json = response.Content;
+
+            //parse the json response for key/value pairs
+            dynamic api = JObject.Parse(json);
+
+            var records = api.records;
+            var recordsAddress = api.records[0].address;
+            var recordsMlsNum = api.records[0].mlsNumber;
+            var recordsListingAgent = api.records[0].brokers[0].agent;
+            var recordsListingAgentPhone = api.records[0].brokers[0].phones[0];
+            var recordsListingCompany = api.records[0].brokers[0].company;
+            var recordsImageLink = api.records[0].imageURLS;
+            
 
             try
             {
@@ -46,22 +57,13 @@ namespace LightningOffer
                 if (response.Content.Length > 43)
                 {
 
+                    Console.WriteLine("We found the following information for " + recordsAddress + ":");
+                    Console.WriteLine("MLS Number: " + recordsMlsNum);
+                    Console.WriteLine("Listing Agent " + recordsListingAgent + ", with " + recordsListingCompany);
+                    Console.WriteLine("The phone number is: " + recordsListingAgentPhone);
+                    Console.WriteLine("Copy and Paste this to see a picture: " + recordsImageLink);
 
-                    //Record newProperty = new Property.Record(); // create property object and attributes
 
-                    object newProperty = JsonConvert.DeserializeObject(json);
-
-                    Broker listingBroker = new Property.Broker(); // create broker object and attributes
-
-
-                    Console.WriteLine(response.Content);
-                  ///  string propertyAddress = newProperty.address;
-                  ///  string mlsNumber = newProperty.mlsNumber;
-                  ///  string[] propertyImage = newProperty.imageURLs;
-
-                    string listAgent = listingBroker.agent;
-                    string listCompany = listingBroker.company;
-                    string[] listPhone = listingBroker.phones;
 
                     Console.WriteLine("We've successfully located the mls listing of " + address + ". Please press any key to continue with your offer."); //confirm the listing was found  -- Console.WriteLine(response.Content)
                   //  CreateOfferFile( address,  propertyAddress,  mlsNumber,  listCompany,  listAgent, listPhone);                
