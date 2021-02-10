@@ -16,7 +16,9 @@ namespace LightningOffer
 
             Console.WriteLine("How much is the EMD (Earnest Money Deposit)?  Use numbers only (i.e. 235000)"); // EMD amount
             Emd1.Amount = Convert.ToInt32(Console.ReadLine());
-            Console.Clear();
+
+            return;
+
         }
     }
 

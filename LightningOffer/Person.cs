@@ -26,6 +26,7 @@ namespace LightningOffer
             {
                 if (consoleKey == ConsoleKey.A) //one buyer
                 {
+                    Console.Clear();
                     Person buyerOne = new Person(); //create the person
 
                     Console.WriteLine("What's the buyer's first name?"); //first name
@@ -47,6 +48,7 @@ namespace LightningOffer
                 }
                 else if (consoleKey == ConsoleKey.B)//two buyers
                 {
+                    Console.Clear();
                     // first buyer
                     Person buyerOne = new Person(); //create the person
 

@@ -4,6 +4,7 @@ using System.Configuration;
 using System.Collections.Specialized;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 
 namespace LightningOffer
 {
@@ -42,14 +43,21 @@ namespace LightningOffer
             //parse the json response for key/value pairs
             dynamic api = JObject.Parse(json);
 
+            //build the records
             var records = api.records;
             var recordsAddress = api.records[0].address;
             var recordsMlsNum = api.records[0].mlsNumber;
-            var recordsListingAgent = api.records[0].brokers[0].agent;
-            var recordsListingAgentPhone = api.records[0].brokers[0].phones[0];
-            var recordsListingCompany = api.records[0].brokers[0].company;
-            var recordsImageLink = api.records[0].imageURLS;
+           
+            var listingBrokerDates = api.records[0].brokers; 
+            //find the most recent broker
+            var listingBrokerInfo = listingBrokerDates[listingBrokerDates.Count - 1];
+            var listingBrokerCompanyName = listingBrokerInfo.company; //company name
+            var listingBrokerAgentName = listingBrokerInfo.agent; //agent name
+            var listingBrokerAgentPhoneNumber = listingBrokerInfo.phones; //agent number (not always available)
             
+            //misc property info (image URL and parcel num)
+            var recordsImageLink = api.records[0].imageURLS;
+            var recordsParcelInfo = api.records[0].features[0].value;            
 
             try
             {
@@ -59,9 +67,10 @@ namespace LightningOffer
 
                     Console.WriteLine("We found the following information for " + recordsAddress + ":");
                     Console.WriteLine("MLS Number: " + recordsMlsNum);
-                    Console.WriteLine("Listing Agent " + recordsListingAgent + ", with " + recordsListingCompany);
-                    Console.WriteLine("The phone number is: " + recordsListingAgentPhone);
+                    Console.WriteLine("Listing Agent " + listingBrokerAgentName + ", with " + listingBrokerCompanyName);
+                    Console.WriteLine("The phone number is: " + listingBrokerAgentPhoneNumber);
                     Console.WriteLine("Copy and Paste this to see a picture: " + recordsImageLink);
+                    
 
 
 

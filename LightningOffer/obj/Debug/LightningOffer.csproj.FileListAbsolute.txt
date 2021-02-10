@@ -46,4 +46,3 @@ C:\Users\pdevine\OneDrive - Bastian Solutions\Desktop\Personal Projects\Lightnin
 C:\Users\pdevine\OneDrive - Bastian Solutions\Desktop\Personal Projects\LightningOffer\C-Sharp-Console-App\LightningOffer\bin\Debug\Newtonsoft.Json.xml
 C:\Users\pdevine\OneDrive - Bastian Solutions\Desktop\Personal Projects\LightningOffer\C-Sharp-Console-App\LightningOffer\bin\Debug\RestSharp.xml
 C:\Users\pdevine\OneDrive - Bastian Solutions\Desktop\Personal Projects\LightningOffer\C-Sharp-Console-App\LightningOffer\obj\Debug\LightningOffer.csproj.CopyComplete
-C:\Users\pdevine\OneDrive - Bastian Solutions\Desktop\Personal Projects\LightningOffer\C-Sharp-Console-App\LightningOffer\obj\Debug\LightningOffer.csprojAssemblyReference.cache
