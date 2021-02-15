@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,88 +14,49 @@ namespace LightningOffer
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public static void AddPerson()
+        public static Person AddPerson(ArrayList listOfBuyers, int numberOfBuyers)
         {
-            Console.WriteLine("How many buyers are there?");
-            Console.WriteLine("A) One buyer");
-            Console.WriteLine("B) Two buyers");
-            ConsoleKey consoleKey = Console.ReadKey().Key;
-       
+          
+            Person buyer = new Person(); //creates the person object
 
             try
             {
-                if (consoleKey == ConsoleKey.A) //one buyer
+                for (int i = 0; i < numberOfBuyers; i++)
                 {
-                    Console.Clear();
-                    Person buyerOne = new Person(); //create the person
-
+                    
                     Console.WriteLine("What's the buyer's first name?"); //first name
-                    buyerOne.FirstName = Console.ReadLine();
-                    // TODO: capitalize the first name
+                    buyer.FirstName = Console.ReadLine(); // TODO: capitalize the first name
+                    
 
-                    Console.WriteLine("What's " + buyerOne.FirstName + "'s last name?"); //last name
-                    buyerOne.LastName = Console.ReadLine();
-                    // TODO: capitalize the first name
+                    Console.WriteLine("What's " + buyer.FirstName + "'s last name?"); //last name
+                    buyer.LastName = Console.ReadLine();  // TODO: capitalize the first name
+                    
 
-                    Console.WriteLine("What's " + buyerOne.FirstName + "'s email address?"); //email address
-                    buyerOne.EmailAddress = Console.ReadLine();
-                    // TODO: format the email address
+                    Console.WriteLine("What's " + buyer.FirstName + "'s email address?"); //email address
+                    buyer.EmailAddress = Console.ReadLine();  // TODO: format the email address
+                   
 
-                    Console.WriteLine("What's " + buyerOne.FirstName + "'s phone number? (enter it without any dashes or characters)"); //phone number
-                    buyerOne.CellPhone = Console.ReadLine();
-                    // TODO: format the cell phone number
-                    return;
-                }
-                else if (consoleKey == ConsoleKey.B)//two buyers
-                {
+                    Console.WriteLine("What's " + buyer.FirstName + "'s phone number? (enter it without any dashes or characters)"); //phone number
+                    buyer.CellPhone = Console.ReadLine();   // TODO: format the cell phone number
+
+                    listOfBuyers.Add(buyer);
                     Console.Clear();
-                    // first buyer
-                    Person buyerOne = new Person(); //create the person
-
-                    Console.WriteLine("What's the first buyer's first name?"); //first name
-                    buyerOne.FirstName = Console.ReadLine();
-                    // TODO: capitalize the first name
-
-                    Console.WriteLine("What's the first buyer's last name?"); //last name
-                    buyerOne.LastName = Console.ReadLine();
-                    // TODO: capitalize the first name
-
-                    Console.WriteLine("What's the first buyer's email address?"); //email address
-                    buyerOne.EmailAddress = Console.ReadLine();
-                    // TODO: format the email address
-
-                    Console.WriteLine("What's the first buyer's phone number? (enter it without any dashes or characters)"); //phone number
-                    buyerOne.CellPhone = Console.ReadLine();
-                    // TODO: format the cell phone number
-
-                    // second buyer
-                    Person buyerTwo = new Person(); //create the person
-
-                    Console.WriteLine("What's the second buyer's first name?"); //first name
-                    buyerTwo.FirstName = Console.ReadLine();
-                    // TODO: capitalize the first name
-
-                    Console.WriteLine("What's the second buyer's last name?"); //last name
-                    buyerTwo.LastName = Console.ReadLine();
-                    // TODO: capitalize the first name
-
-                    Console.WriteLine("What's the second buyer's email address?"); //email address
-                    buyerTwo.EmailAddress = Console.ReadLine();
-                    // TODO: format the email address
-
-                    Console.WriteLine("What's the second buyer's phone number? (enter it without any dashes or characters)"); //phone number
-                    buyerTwo.CellPhone = Console.ReadLine();
-                    // TODO: format the cell phone number
-                    return;
                 }
+
+                
+
+                return buyer;
+    
+
             }
             catch (Exception e)
             {
                 Console.WriteLine("Something went wrong with the add person method.");
                 Console.WriteLine(e.Message);
+                return buyer;
             }
 
-            
+
         }
 
 

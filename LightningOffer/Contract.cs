@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RestSharp.Authenticators;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Kernel.Geom;
+using System.IO;
 
 namespace LightningOffer
 {
@@ -44,16 +48,8 @@ namespace LightningOffer
 
         public static void BeginOffer()
         {
-            Contract newOffer = new Contract();
-
-            //method for filling contact info (top of contract, date, MLS, etc)
-
-            
-
-           
+ 
         }
-
-        //method for 
 
     }
 
