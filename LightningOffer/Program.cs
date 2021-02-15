@@ -11,10 +11,13 @@ namespace LightningOffer
     class Program
     {
         public static void Main(string[] args)
-        {          
+        {
 
             //PROPERTY SECTION
-            Property.PropertyLookUp();
+            Console.Clear();
+            Console.WriteLine("Please enter the property street address below: (i.e. 123 Main Street)");
+            string address = Console.ReadLine();
+            Property property = Property.PropertyLookUp(address);
             Console.Clear();
 
             //BUYER SECTION
@@ -29,7 +32,12 @@ namespace LightningOffer
             EMD emd = EMD.AddErnestMoneyInfo();
             Console.Clear();
 
-            Financing.FinancingInfo();// collect info on financing
+            //FINANCING INFORMATION
+            Financing fiancingInfo = Financing.AddFinancing();
+            Console.Clear();
+
+            //APPRAISAL
+            Appraisal appraisal = Appraisal.
 
             Contract.BeginOffer();// build the offer 
             

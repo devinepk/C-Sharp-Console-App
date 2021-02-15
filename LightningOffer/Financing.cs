@@ -31,7 +31,7 @@ namespace LightningOffer
 
 
 
-        public static void FinancingInfo()
+        public static Financing AddFinancing()
         {
             Financing finance = new Financing();
 
@@ -123,6 +123,7 @@ namespace LightningOffer
                 finance.SellingHoldingEscrow = true;
             }
 
+            return finance;
         }
 
     }

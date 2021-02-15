@@ -11,10 +11,9 @@ namespace LightningOffer
     public class Property
     {
 
-        public static void PropertyLookUp()
+        public static Property PropertyLookUp(string address)
         {
-            Console.WriteLine("Please enter the property street address below: (i.e. 123 Main Street)");
-            string address = Console.ReadLine();
+            Property property = new Property();
 
             //append the entered address to the request
             var addressentered = "https://api.datafiniti.co/v4/properties/search?address=" + address;
@@ -75,17 +74,19 @@ namespace LightningOffer
 
 
                     Console.WriteLine("We've successfully located the mls listing of " + address + ". Please press any key to continue with your offer."); //confirm the listing was found  -- Console.WriteLine(response.Content)
-                  //  CreateOfferFile( address,  propertyAddress,  mlsNumber,  listCompany,  listAgent, listPhone);                
+                                                                                                                                                           //  CreateOfferFile( address,  propertyAddress,  mlsNumber,  listCompany,  listAgent, listPhone);      
+                    return property;
                 }
                 else
                 {
-                    Console.WriteLine(address + " is not listed as active in the MLS. Please enter another address:");
-                    PropertyLookUp();
+                    Console.WriteLine(address + " is not listed as active in the MLS.");
+                    return property;
                 }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
+                return property;
             }
         }
 
