@@ -8,6 +8,7 @@ using iText.Kernel.Pdf;
 using iText.Layout;
 using iText.Kernel.Geom;
 using System.IO;
+using iText.Layout.Element;
 
 namespace LightningOffer
 {
@@ -48,7 +49,7 @@ namespace LightningOffer
 
         public static void BeginOffer()
         {
- 
+           
         }
 
     }

@@ -1,6 +1,9 @@
 TODO:
 Update README file (google article about that)
+Map out updated wireframe (cut up sections of the actual contract and arrange them in an intuitive way)
 
-DOING:
+DOING: 
+Add form fields to PDF contract (check sejda.com)
+
 
 DONE:

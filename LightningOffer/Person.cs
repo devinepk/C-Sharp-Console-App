@@ -14,6 +14,14 @@ namespace LightningOffer
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
+        private Person()
+        {
+            CellPhone = "555-555-5555";
+            EmailAddress = "blank@noemail.com";
+            FirstName = "NoFirstName";
+            LastName = "NoLastName";
+        }
+
         public static Person AddPerson(ArrayList listOfBuyers, int numberOfBuyers)
         {
           

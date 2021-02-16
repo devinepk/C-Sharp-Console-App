@@ -3,3 +3,6 @@
 
 # todo list
 .TODO
+
+# proprietary docs
+*.pdf

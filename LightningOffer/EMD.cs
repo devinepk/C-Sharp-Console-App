@@ -9,12 +9,18 @@ namespace LightningOffer
     public class EMD
     {
 
+        public bool Cash { get; set; }
+        public bool EquityLine { get; set; }
+        public bool Gift { get; set; }
+        public bool Other { get; set; }
 
-        bool Cash;
-        bool EquityLine;
-        bool Gift;
-        bool Other;
-
+        private EMD() //constructor
+        {
+            Cash = false;
+            EquityLine = false;
+            Gift = false;
+            Other = false;
+        }
 
         public static EMD AddErnestMoneyInfo()
         {
@@ -65,13 +71,11 @@ namespace LightningOffer
                 Console.WriteLine("Where is the ernest money deposit coming from?"); // EMD amount
                 string otherEMD = Console.ReadLine();
                 
-
                 Console.WriteLine("How much is the EMD (Earnest Money Deposit)?  Use numbers only (i.e. 235000)"); // EMD amount
                 string input = Console.ReadLine();
                 int amount = int.Parse(input);
 
             }
-
 
             return emd;
 

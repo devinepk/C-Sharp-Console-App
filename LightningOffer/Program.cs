@@ -13,6 +13,7 @@ namespace LightningOffer
         public static void Main(string[] args)
         {
 
+            
             //PROPERTY SECTION
             Console.Clear();
             Console.WriteLine("Please enter the property street address below: (i.e. 123 Main Street)");
@@ -37,7 +38,8 @@ namespace LightningOffer
             Console.Clear();
 
             //APPRAISAL
-            Appraisal appraisal = Appraisal.
+            Appraisal appraisal = Appraisal.AddAppraisal();
+            Console.Clear();
 
             Contract.BeginOffer();// build the offer 
             

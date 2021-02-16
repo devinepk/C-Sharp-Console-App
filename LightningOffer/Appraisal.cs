@@ -8,9 +8,16 @@ namespace LightningOffer
 {
     class Appraisal
     {
-        bool Lender = false;
-        bool Cash = false;
-        bool NotContingent = false;
+        public bool Lender { get; set; }
+        public bool Cash { get; set; }
+        public bool NotContingent { get; set; }
+
+        private Appraisal()
+        {
+            Lender = false;
+            Cash = false;
+            NotContingent = false;
+        }
 
         public static Appraisal AddAppraisal()
         {

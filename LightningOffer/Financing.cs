@@ -9,27 +9,49 @@ namespace LightningOffer
     public class Financing
     {
 
-        bool Conventional = false;
-        bool Fha = false;
-        bool Va = false;
-        bool ARM = false;
-        bool Cash = false;
-        bool EquityLine = false;
-        int EquityAmount = 0;
-        bool ListingHoldingEscrow = false;
-        bool SellingHoldingEscrow = false;
+        private bool Conventional { get; set; }
+        private bool Fha { get; set; }
+        private bool Va { get; set; }
+        private bool ARM { get; set; }
+        private bool Cash { get; set; }
+        private bool EquityLine { get; set; }
+        private int EquityAmount { get; set; }
+        private bool ListingHoldingEscrow { get; set; }
+        private bool SellingHoldingEscrow { get; set; }
 
-        bool Gift = false;
-        int GiftAmount = 0;
+        private bool Gift { get; set; }
+        private int GiftAmount { get; set; }
 
-        bool OtherPayment = false;
-        string OtherPaymentDescription = "";
-        int OtherPaymentAmount = 0;
+        private bool OtherPayment { get; set; }
+        private string OtherPaymentDescription { get; set; }
+        private int OtherPaymentAmount { get; set; }
 
-        int downPaymentAmount = 0;
-        double downPaymentPercent = 0.0;
+        private int downPaymentAmount { get; set; }
+        private double downPaymentPercent { get; set; }
 
 
+        public Financing()
+        {
+            Conventional = false;
+            Fha = false;
+            Va = false;
+            ARM = false;
+            Cash = false;
+            EquityLine = false;
+            EquityAmount = 0;
+            ListingHoldingEscrow = false;
+            SellingHoldingEscrow = false;
+
+            Gift = false;
+            GiftAmount = 0;
+
+            OtherPayment = false;
+            OtherPaymentDescription = "";
+             OtherPaymentAmount = 0;
+
+            downPaymentAmount = 0;
+            downPaymentPercent = 0.0;
+        }
 
         public static Financing AddFinancing()
         {

@@ -87,6 +87,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appraisal.cs" />
     <Compile Include="EMD.cs" />
     <Compile Include="Financing.cs" />
     <Compile Include="Contract.cs" />
